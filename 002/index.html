@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processamento de salários de funcionários</title>
+</head>
+<body>
+    <main>
+        <h1>Processamento de salários</h1>
+        <form action="salvar.php" method="get" onsubmit="return salario()">
+            <label for="func">Quantos funcionários serão cadastrados?</label>
+            <input type="number" name="func" id="func">
+            <input type="submit" value="iniciar">
+        </form>
+        <p id="res"></p>
+    </main>
+    
+    <script>
+        function salario () {
+            let func = Number(document.getElementById("func").value)
+            let res = document.getElementById("res")
+            let sal = 0
+            let soma = 0
+            let media = 0
+            let menor = 0
+            let maior = 0
+            let cont = 1
+
+            while (cont <= func) {
+                sal = Number(prompt(`Qual o salário do ${cont} funconário?`))
+                soma += sal
+                cont ++
+                if (cont <= 1) {
+                menor = sal
+                maior = sal
+                }
+
+                if (sal > maior) {
+                    maior = sal
+                } else if (sal < menor) {
+                    menor = sal
+                }
+            }
+            media = soma / func
+            res.innerHTML = `A empresa irá gastar R$${soma} para pagar os salários de todos. A média
+            dos salários é de R${media}. O maior salário foi de R$${maior}. O menor salário foi de R$${menor}.`
+
+            return false
+        }
+    </script>
+</body>
+</html>
