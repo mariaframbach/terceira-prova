@@ -1,5 +1,5 @@
 # terceira-prova
- Ex001: Financiamento de um carro <br>
+ Ex001: Financiamento de carro <br>
  https://mariaframbach.github.io/terceira-prova/001/
 
  Ex002: Salário dos funcionários <br>
